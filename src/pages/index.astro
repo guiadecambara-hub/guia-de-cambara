@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Guia de Cambará | Capital dos Canyons">
+	<!-- HERO: O TOPO CHAMATIVO -->
+	<section class="hero">
+		<div class="hero-content">
+			<h1>Descubra Cambará do Sul com quem vive aqui</h1>
+			<p>Explore os maiores canyons da América Latina com roteiros autênticos e dicas de especialistas locais.</p>
+			<a href="/o-que-fazer" class="btn-primary">Ver Roteiros</a>
+		</div>
+	</section>
+
+	<!-- CATEGORIAS: OS SILOS -->
+	<section class="container categories">
+		<h2>Planeje sua Viagem</h2>
+		<div class="category-grid">
+			<a href="/o-que-fazer" class="category-card">
+				<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80" alt="Canyons" />
+				<h3>O Que Fazer</h3>
+				<p>Trilhas, canyons e aventuras inesquecíveis.</p>
+			</a>
+			<a href="/onde-ficar" class="category-card">
+				<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Hospedagem" />
+				<h3>Onde Ficar</h3>
+				<p>Pousadas charmosas e hotéis fazenda.</p>
+			</a>
+			<a href="/onde-comer" class="category-card">
+				<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Gastronomia" />
+				<h3>Onde Comer</h3>
+				<p>O melhor da culinária serrana e campeira.</p>
+			</a>
+			<a href="/guia-pratico" class="category-card">
+				<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80" alt="Guia" />
+				<h3>Guia Prático</h3>
+				<p>Clima, como chegar e o que levar na mala.</p>
+			</a>
+		</div>
+	</section>
+
+	<!-- SEÇÃO DE AUTORIDADE (EEAT) -->
+	<section class="eeat-section">
+		<div class="container eeat-content">
+			<div class="eeat-icon">✓</div>
+			<div>
+				<h3>Experiência Local & Confiança</h3>
+				<p>O <strong>Guia de Cambará</strong> é feito por moradores apaixonados. Cada dica aqui foi testada pessoalmente para garantir que sua viagem seja perfeita e segura.</p>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80');
+		background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center;
+	}
+	.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+	.btn-primary { background: #10b981; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
+	
+	.categories { padding: 60px 0; text-align: center; }
+	.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+	.category-card { background: white; border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+	.category-card:hover { transform: translateY(-10px); }
+	.category-card img { width: 100%; height: 200px; object-fit: cover; }
+	.category-card h3 { margin: 15px 0 5px 0; }
+
+	.eeat-section { background: #f1f5f9; padding: 60px 20px; border-left: 5px solid #10b981; }
+	.eeat-content { display: flex; align-items: center; gap: 30px; text-align: left; }
+	.eeat-icon { background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+</style>
