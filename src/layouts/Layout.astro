@@ -1,24 +1,36 @@
 ---
+// src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-interface Props { title: string; }
+interface Props {
+	title: string;
+}
+
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
+
+		<!-- ESTAS SÃO AS DUAS LINHAS DO SEU PRINT -->
+		<link rel="icon" type="image/webp" href="/favicon.webp" />
+		<link rel="apple-touch-icon" href="/favicon.webp" />
+
 	</head>
 	<body>
-		<Header /> <!-- A peça do topo entra aqui -->
 		
+		<Header /> <!-- Chama o topo do site -->
+
 		<main>
-			<slot /> <!-- O conteúdo da página entra aqui -->
+			<slot /> <!-- Aqui entra o conteúdo de cada página -->
 		</main>
 
-		<Footer /> <!-- A peça do rodapé entra aqui -->
+		<Footer /> <!-- Chama o rodapé do site -->
+
 	</body>
 </html>
