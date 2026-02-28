@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,21 +17,27 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
+		
+		<!-- META DESCRIÇÃO DINÂMICA PARA O GOOGLE -->
+		<meta name="description" content={description} />
 
-		<!-- ESTAS SÃO AS DUAS LINHAS DO SEU PRINT -->
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<link rel="apple-touch-icon" href="/favicon.webp" />
-
 	</head>
 	<body>
+		<Header />
 		
-		<Header /> <!-- Chama o topo do site -->
-
 		<main>
 			<slot /> <!-- Aqui entra o conteúdo de cada página -->
 		</main>
 
-		<Footer /> <!-- Chama o rodapé do site -->
-
+		<Footer />
 	</body>
 </html>
+
+<style is:global>
+	/* Estilos básicos para o site todo */
+	:root { --primary-green: #10b981; --dark-blue: #0f172a; }
+	body { margin: 0; font-family: system-ui, sans-serif; background-color: #f8fafc; }
+	.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+</style>
