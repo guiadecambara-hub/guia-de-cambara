@@ -3,8 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Guia de Cambará | Capital dos Canyons">
-	<!-- HERO: O TOPO CHAMATIVO -->
+	
+	<!-- BANNER PRINCIPAL (HERO) -->
 	<section class="hero">
+		<!-- A imagem agora está aqui no HTML, facilitando pro Google achar -->
+		<img 
+			src="/hero-cambara.webp" 
+			alt="Canyons de Cambará do Sul" 
+			class="hero-bg"
+			fetchpriority="high"
+			loading="eager"
+		/>
 		<div class="hero-content">
 			<h1>Descubra Cambará do Sul com quem vive aqui</h1>
 			<p>Explore os maiores canyons da América Latina com roteiros autênticos e dicas de especialistas locais.</p>
@@ -12,61 +21,105 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<!-- CATEGORIAS: OS SILOS -->
+	<!-- SEÇÃO DE CATEGORIAS (SILOS) -->
 	<section class="container categories">
 		<h2>Planeje sua Viagem</h2>
 		<div class="category-grid">
+			
 			<a href="/o-que-fazer" class="category-card">
-				<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80" alt="Canyons" />
-				<h3>O Que Fazer</h3>
-				<p>Trilhas, canyons e aventuras inesquecíveis.</p>
+				<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80" alt="O que fazer" />
+				<div class="card-info">
+					<h3>O Que Fazer</h3>
+					<p>Trilhas, canyons e aventuras inesquecíveis.</p>
+				</div>
 			</a>
+
 			<a href="/onde-ficar" class="category-card">
-				<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Hospedagem" />
-				<h3>Onde Ficar</h3>
-				<p>Pousadas charmosas e hotéis fazenda.</p>
+				<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Onde ficar" />
+				<div class="card-info">
+					<h3>Onde Ficar</h3>
+					<p>Pousadas charmosas e hotéis fazenda.</p>
+				</div>
 			</a>
+
 			<a href="/onde-comer" class="category-card">
-				<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Gastronomia" />
-				<h3>Onde Comer</h3>
-				<p>O melhor da culinária serrana e campeira.</p>
+				<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Onde comer" />
+				<div class="card-info">
+					<h3>Onde Comer</h3>
+					<p>O melhor da culinária serrana e campeira.</p>
+				</div>
 			</a>
+
 			<a href="/guia-pratico" class="category-card">
-				<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80" alt="Guia" />
-				<h3>Guia Prático</h3>
-				<p>Clima, como chegar e o que levar na mala.</p>
+				<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80" alt="Guia prático" />
+				<div class="card-info">
+					<h3>Guia Prático</h3>
+					<p>Clima, como chegar e o que levar na mala.</p>
+				</div>
 			</a>
+
 		</div>
 	</section>
 
-	<!-- SEÇÃO DE AUTORIDADE (EEAT) -->
+	<!-- SEÇÃO EEAT (AUTORIDADE) -->
 	<section class="eeat-section">
 		<div class="container eeat-content">
 			<div class="eeat-icon">✓</div>
-			<div>
+			<div class="eeat-text">
 				<h3>Experiência Local & Confiança</h3>
 				<p>O <strong>Guia de Cambará</strong> é feito por moradores apaixonados. Cada dica aqui foi testada pessoalmente para garantir que sua viagem seja perfeita e segura.</p>
 			</div>
 		</div>
 	</section>
+
 </Layout>
 
 <style>
+	/* ESTILO DO BANNER - AGORA OTIMIZADO */
 	.hero {
-		background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80');
-		background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center;
+		position: relative;
+		height: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		color: white;
+		text-align: center;
 	}
-	.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-	.btn-primary { background: #10b981; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
-	
-	.categories { padding: 60px 0; text-align: center; }
-	.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-	.category-card { background: white; border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
-	.category-card:hover { transform: translateY(-10px); }
-	.category-card img { width: 100%; height: 200px; object-fit: cover; }
-	.category-card h3 { margin: 15px 0 5px 0; }
+	.hero-bg {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		object-fit: cover;
+		z-index: -1;
+		filter: brightness(0.6); /* Deixa a imagem escura pro texto brilhar */
+	}
+	.hero h1 { font-size: 3rem; margin-bottom: 20px; padding: 0 10px; font-weight: 800; }
+	.hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; }
+	.btn-primary { background: #10b981; color: white; padding: 15px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+	.btn-primary:hover { background: #059669; }
 
-	.eeat-section { background: #f1f5f9; padding: 60px 20px; border-left: 5px solid #10b981; }
-	.eeat-content { display: flex; align-items: center; gap: 30px; text-align: left; }
-	.eeat-icon { background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+	/* CARDS */
+	.categories { padding: 80px 20px; text-align: center; }
+	.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+	.category-card { background: white; border-radius: 15px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #f1f5f9; }
+	.category-card:hover { transform: translateY(-10px); }
+	.category-card img { width: 100%; height: 220px; object-fit: cover; }
+	.card-info { padding: 20px; }
+	.card-info h3 { margin: 0 0 10px 0; color: #0f172a; }
+	.card-info p { font-size: 0.9rem; color: #64748b; margin: 0; }
+
+	/* EEAT */
+	.eeat-section { background: #f8fafc; padding: 60px 20px; border-top: 1px solid #e2e8f0; }
+	.eeat-content { display: flex; align-items: center; gap: 30px; max-width: 900px; margin: 0 auto; text-align: left; }
+	.eeat-icon { background: #10b981; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+	.eeat-text h3 { color: #0f172a; margin-bottom: 10px; }
+
+	/* CELULAR */
+	@media (max-width: 768px) {
+		.hero { height: 400px; }
+		.hero h1 { font-size: 2rem; }
+		.category-grid { grid-template-columns: 1fr; }
+		.eeat-content { flex-direction: column; text-align: center; }
+	}
 </style>
