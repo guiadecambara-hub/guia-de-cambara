@@ -4,14 +4,13 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout 
   title="Quem Somos | A Voz Local de Cambará do Sul"
-  description="Conheça a missão do Guia de Cambará: transformar sua viagem aos Canyons em uma experiência segura, autêntica e inesquecível."
+  description="Conheça a missão do Guia de Cambará e nossa paixão pelos Aparados da Serra e Serra Geral."
 >
-  <!-- TOPO DA PÁGINA COM A IMAGEM CORRETA -->
   <section class="about-hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1>Muito Além de um Blog: Somos a sua Conexão Local</h1>
-      <p>Nascemos do frio, da neblina e da paixão pelos Canyons de Cambará do Sul.</p>
+      <p>Nascemos da paixão pelos Canyons de Cambará do Sul.</p>
     </div>
   </section>
 
@@ -21,15 +20,23 @@ import Layout from '../layouts/Layout.astro';
       <div class="story-text">
         <h2>Por que o Guia de Cambará existe?</h2>
         <p>
-          Cambará do Sul não é um destino para se visitar apenas com um GPS na mão. É uma terra de mudanças bruscas de tempo, trilhas que exigem respeito e segredos que só quem acorda com o som das araucárias conhece.
+          Cambará do Sul não é um destino para se visitar apenas com um GPS na mão. É uma terra de mudanças bruscas de tempo e trilhas que exigem respeito.
         </p>
         <p>
-          O <strong>Guia de Cambará</strong> foi criado para preencher o vazio entre o turista e a realidade local. Nossa missão é ser o seu amigo local, aquele que te dá a dica certa na hora certa.
+          O <strong>Guia de Cambará</strong> foi criado para ser o seu amigo local. Nossa missão é garantir que você veja a melhor vista, prove a melhor comida e sinta a verdadeira alma da Serra Gaúcha.
         </p>
       </div>
-      <div class="story-image">
-        <!-- Imagem lateral: você pode trocar por outra foto local depois -->
-        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80" alt="Canyons de Cambará" class="img-rounded" />
+      
+      <!-- IMAGEM COM CRÉDITO ATUALIZADO -->
+      <div class="story-image-container">
+        <img 
+          src="/serra-geral-sobre-nos.webp" 
+          alt="Canyon no Parque Nacional da Serra Geral em Cambará do Sul" 
+          class="img-rounded" 
+        />
+        <cite class="image-credit">
+          Foto: <a href="https://commons.wikimedia.org/wiki/User:Zegarciajr" target="_blank" rel="noopener noreferrer">Jose Garcia Junior</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+        </cite>
       </div>
     </section>
 
@@ -37,7 +44,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="pillar-card">
         <div class="pillar-icon">📍</div>
         <h3>Vivência Local</h3>
-        <p>Nossa fonte é a vida real em Cambará. Nós caminhamos nas trilhas e conhecemos cada canto desta terra.</p>
+        <p>Nossa fonte é a vida real. Nós caminhamos nas trilhas e conhecemos cada canto desta terra.</p>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🛡️</div>
@@ -55,46 +62,35 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  /* AJUSTE DA IMAGEM PRINCIPAL */
   .about-hero { 
     position: relative;
-    /* Aqui chamamos a sua imagem local */
     background-image: url('/hero-cambara.webp'); 
     background-size: cover; 
     background-position: center; 
     color: white; 
     text-align: center; 
-    padding: 120px 20px;
-    overflow: hidden;
+    padding: 100px 20px;
   }
+  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); z-index: 1; }
+  .hero-content { position: relative; z-index: 2; }
+  .about-hero h1 { font-size: 2.5rem; color: #10b981; margin-bottom: 10px; }
 
-  .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 23, 42, 0.6); /* Escurece a imagem para o texto aparecer */
-    z-index: 1;
-  }
+  .about-main { padding: 60px 20px; }
+  .our-story { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; margin-bottom: 80px; }
+  .story-text h2 { color: #0f172a; font-size: 2rem; margin-bottom: 20px; }
+  .story-text p { font-size: 1rem; line-height: 1.7; color: #475569; margin-bottom: 15px; }
 
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
+  .story-image-container { display: flex; flex-direction: column; }
+  .img-rounded { border-radius: 20px; width: 100%; height: auto; box-shadow: 15px 15px 0px #10b981; }
+  .image-credit { font-size: 0.7rem; color: #94a3b8; margin-top: 15px; text-align: right; font-style: normal; }
+  .image-credit a { color: #94a3b8; text-decoration: underline; }
 
-  .about-hero h1 { font-size: 2.8rem; color: #10b981; margin-bottom: 20px; line-height: 1.2; }
-  .about-hero p { font-size: 1.2rem; }
-
-  .about-main { padding: 80px 20px; }
-  .our-story { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
-  .story-text h2 { color: #0f172a; font-size: 2.2rem; margin-bottom: 25px; }
-  .story-text p { font-size: 1.1rem; line-height: 1.8; color: #475569; }
-  .img-rounded { border-radius: 30px; box-shadow: 15px 15px 0px #10b981; width: 100%; }
-
-  .eeat-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-  .pillar-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
-  .pillar-icon { font-size: 3rem; margin-bottom: 20px; }
+  .eeat-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .pillar-card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #f1f5f9; text-align: center; }
+  .pillar-icon { font-size: 2.5rem; margin-bottom: 15px; }
 
   @media (max-width: 900px) {
     .our-story { grid-template-columns: 1fr; text-align: center; }
-    .about-hero h1 { font-size: 2rem; }
+    .image-credit { text-align: center; }
   }
 </style>
