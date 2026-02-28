@@ -10,10 +10,8 @@
       <ul>
         <li><a href="/onde-comer">Onde Comer</a></li>
         <li><a href="/onde-ficar">Onde Ficar</a></li>
-        <li><a href="/guia-pratico">Guia Prático</a></li>
         <li><a href="/o-que-fazer">O Que Fazer</a></li>
         <li><a href="/sobre-nos">Sobre Nós</a></li>
-        <li><a href="/contato">Contato</a></li>
       </ul>
     </nav>
   </div>
@@ -22,13 +20,15 @@
 <style>
   .site-header { background: white; border-bottom: 1px solid #e2e8f0; padding: 10px 0; position: sticky; top: 0; z-index: 100; }
   .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-  .header-logo { width: 200px; height: auto; }
-  .main-nav ul { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
-  .main-nav a { text-decoration: none; color: #0f172a; font-weight: 600; font-size: 0.9rem; }
+  .header-logo { width: 180px; height: auto; }
+  .main-nav ul { display: flex; list-style: none; gap: 15px; margin: 0; padding: 0; }
+  .main-nav a { text-decoration: none; color: #0f172a; font-weight: 600; font-size: 0.85rem; }
 
   @media (max-width: 768px) {
-    .header-content { flex-direction: column; gap: 15px; }
-    .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .header-logo { width: 160px; }
+    .site-header { padding: 5px 0; }
+    .header-content { flex-direction: column; gap: 5px; }
+    .header-logo { width: 130px; } /* Logo menor no celular */
+    .main-nav ul { gap: 8px 12px; justify-content: center; }
+    .main-nav a { font-size: 0.75rem; }
   }
 </style>
