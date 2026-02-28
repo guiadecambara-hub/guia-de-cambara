@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Quem Somos | A Voz Local de Cambará do Sul"
+  description="Conheça a missão do Guia de Cambará: transformar sua viagem aos Canyons em uma experiência segura, autêntica e inesquecível."
+>
+  <!-- SEO / EEAT: Dados Estruturados para o Google (Invisível para o usuário) -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Guia de Cambará",
+        "url": "https://guiadecambara.com.br",
+        "logo": "https://guiadecambara.com.br/logo-transparente.webp",
+        "description": "Especialistas locais em turismo nos Canyons de Cambará do Sul.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cambará do Sul",
+          "addressRegion": "RS",
+          "addressCountry": "BR"
+        }
+      }
+    }
+  </script>
+
+  <!-- TOPO DA PÁGINA -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Muito Além de um Blog: Somos a sua Conexão Local</h1>
+      <p>Nascemos do frio, da neblina e da paixão pelos Canyons de Cambará do Sul.</p>
+    </div>
+  </section>
+
+  <div class="container about-main">
+    
+    <!-- NOSSA ESSÊNCIA (EXPERIENCE) -->
+    <section class="our-story">
+      <div class="story-text">
+        <h2>Por que o Guia de Cambará existe?</h2>
+        <p>
+          Cambará do Sul não é um destino para se visitar apenas com um GPS na mão. É uma terra de mudanças bruscas de tempo, trilhas que exigem respeito e segredos que só quem acorda com o som das araucárias conhece.
+        </p>
+        <p>
+          O <strong>Guia de Cambará</strong> foi criado para preencher o vazio entre o turista e a realidade local. Vimos muitos visitantes perdendo a vista do Itaimbezinho por causa da 'viração' (neblina) ou deixando de provar o verdadeiro queijo serrano por falta de informação. Nossa missão é ser o seu amigo local, aquele que te diz: <em>"Hoje o dia está bom para o Canyon Fortaleza, vá agora!"</em>.
+        </p>
+      </div>
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80" alt="Vista dos Canyons de Cambará" class="img-rounded" />
+      </div>
+    </section>
+
+    <!-- PILARES EEAT (EXPERTISE E TRUST) -->
+    <section class="eeat-pillars">
+      <div class="pillar-card">
+        <div class="pillar-icon">📍</div>
+        <h3>Vivência Local</h3>
+        <p>Nós não pesquisamos no Google para escrever. Nós caminhamos nas trilhas, comemos nos restaurantes e conversamos com os tropeiros. Nossa fonte é a vida real em Cambará.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🛡️</div>
+        <h3>Compromisso com a Segurança</h3>
+        <p>O ecoturismo exige responsabilidade. Priorizamos informações sobre guias credenciados e condições das estradas para que sua única preocupação seja apreciar a vista.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🌿</div>
+        <h3>Turismo Consciente</h3>
+        <p>Amamos nossa terra. Promovemos o turismo que respeita a natureza e fortalece o pequeno empreendedor de Cambará do Sul.</p>
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA AÇÃO -->
+    <section class="about-cta">
+      <h2>Pronto para explorar a Capital dos Canyons?</h2>
+      <p>Deixe que a nossa experiência guie os seus passos. Explore nossos roteiros e descubra o melhor de Cambará do Sul.</p>
+      <div class="cta-buttons">
+        <a href="/o-que-fazer" class="btn-primary">Ver O Que Fazer</a>
+        <a href="/contato" class="btn-secondary">Fale Conosco</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  /* ESTILOS HUMANIZADOS */
+  .about-hero { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 100px 20px; }
+  .about-hero h1 { font-size: 2.8rem; color: #10b981; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.2; }
+  .about-hero p { font-size: 1.2rem; color: #e2e8f0; }
+
+  .about-main { padding: 80px 20px; }
+
+  .our-story { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
+  .story-text h2 { color: #0f172a; font-size: 2.2rem; margin-bottom: 25px; position: relative; }
+  .story-text h2::after { content: ''; display: block; width: 60px; height: 4px; background: #10b981; margin-top: 10px; }
+  .story-text p { font-size: 1.1rem; line-height: 1.8; color: #475569; margin-bottom: 20px; }
+
+  .img-rounded { border-radius: 30px; box-shadow: 20px 20px 0px #10b981; width: 100%; height: auto; }
+
+  .eeat-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 100px; }
+  .pillar-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: 0.3s; text-align: center; }
+  .pillar-card:hover { transform: translateY(-10px); border-color: #10b981; }
+  .pillar-icon { font-size: 3rem; margin-bottom: 20px; }
+  .pillar-card h3 { color: #0f172a; font-size: 1.4rem; margin-bottom: 15px; }
+  .pillar-card p { color: #64748b; line-height: 1.6; }
+
+  .about-cta { text-align: center; background: #0f172a; color: white; padding: 80px 40px; border-radius: 40px; }
+  .about-cta h2 { font-size: 2rem; margin-bottom: 20px; color: #10b981; }
+  .about-cta p { font-size: 1.1rem; color: #94a3b8; margin-bottom: 40px; }
+  
+  .cta-buttons { display: flex; gap: 20px; justify-content: center; }
+  .btn-primary { background: #10b981; color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+  .btn-secondary { border: 2px solid #10b981; color: #10b981; padding: 13px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+  .btn-primary:hover { background: #059669; }
+  .btn-secondary:hover { background: #10b981; color: white; }
+
+  @media (max-width: 900px) {
+    .our-story { grid-template-columns: 1fr; text-align: center; }
+    .story-text h2::after { margin: 10px auto; }
+    .about-hero h1 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; }
+  }
+</style>
