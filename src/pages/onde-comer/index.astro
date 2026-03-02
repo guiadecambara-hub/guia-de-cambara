@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Onde Comer em Cambará do Sul | Guia Gastronômico Local"
+  description="Descubra os melhores restaurantes de Cambará do Sul. Da tradicional comida campeira no fogão a lenha aos cafés coloniais com pinhão."
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>Gastronomia em Cambará do Sul</h1>
+      <p>Sabores autênticos da Serra Gaúcha que você só encontra aqui.</p>
+    </div>
+  </section>
+
+  <div class="container main-content">
+    <article class="article-body">
+      <h2>A Alma da Comida Campeira</h2>
+      <p>
+        Visitar Cambará do Sul e não provar o <strong>pinhão</strong> ou um autêntico <strong>churrasco de vala</strong> é como não ver os canyons. A culinária local é influenciada pelo clima frio e pela cultura tropeira.
+      </p>
+
+      <div class="recommendation-grid">
+        <!-- Restaurante 1 -->
+        <div class="res-card">
+          <div class="res-info">
+            <h3>Galpão Costaneira</h3>
+            <p>O mais tradicional da cidade. Comida servida direto no fogão a lenha, ambiente rústico e apresentações de música gaúcha ao vivo durante o jantar.</p>
+            <span class="tag">Dica Local: Prove o Arroz Carreteiro.</span>
+          </div>
+        </div>
+
+        <!-- Restaurante 2 -->
+        <div class="res-card">
+          <div class="res-info">
+            <h3>Restaurante do Lago</h3>
+            <p>Localizado em frente ao lago da cidade, oferece um buffet completo e é famoso pela sequência de trutas, peixe muito comum nas águas geladas da região.</p>
+          </div>
+        </div>
+
+        <!-- Restaurante 3 -->
+        <div class="res-card">
+          <div class="res-info">
+            <h3>Café Colonial e Docerias</h3>
+            <p>Para o final da tarde, a cidade oferece casas de chá com bolos caseiros, geleias artesanais de frutas nativas e o clássico queijo serrano.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eeat-notice">
+        <h4>Como avaliamos?</h4>
+        <p>Este guia não aceita patrocínios para listar estabelecimentos. Nossas recomendações são baseadas em visitas frequentes e na satisfação real dos turistas que atendemos na região.</p>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-header { background: #0f172a; color: white; padding: 60px 20px; text-align: center; }
+  .page-header h1 { color: #10b981; font-size: 2.5rem; margin-bottom: 10px; }
+  
+  .main-content { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+  .article-body h2 { color: #0f172a; font-size: 2rem; margin-bottom: 20px; }
+  .article-body p { line-height: 1.8; color: #475569; margin-bottom: 30px; font-size: 1.1rem; }
+
+  .recommendation-grid { display: flex; flex-direction: column; gap: 30px; margin-bottom: 60px; }
+  .res-card { background: white; border-radius: 15px; border-left: 6px solid #10b981; padding: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  .res-card h3 { margin-bottom: 10px; color: #0f172a; }
+  .tag { background: #ecfdf5; color: #065f46; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+
+  .eeat-notice { background: #f8fafc; padding: 30px; border-radius: 15px; border: 1px dashed #cbd5e1; }
+  .eeat-notice h4 { color: #0f172a; margin-bottom: 10px; }
+  .eeat-notice p { font-size: 0.95rem; margin-bottom: 0; font-style: italic; }
+
+  @media (max-width: 768px) {
+    .page-header h1 { font-size: 1.8rem; }
+  }
+</style>
