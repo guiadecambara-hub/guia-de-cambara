@@ -1,11 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Comments from '../../components/Comments.astro';
+import Comments from '../../components/Comments.astro'; // Importamos a peça aqui
 ---
 
 <Layout 
-  title="Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)"
-  description="Guia completo de gastronomia em Cambará do Sul. Dicas reais de quem vive aqui sobre os melhores restaurantes da Serra Gaúcha."
+  title="Onde Comer em Cambará do Sul: 7 Restaurantes Testados"
+  description="Guia gastronômico completo de Cambará do Sul. Dicas reais de quem vive aqui sobre os melhores restaurantes da Serra Gaúcha."
 >
   <section class="article-hero" style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden;">
     <img src="/card-onde-comer.webp" alt="Gastronomia em Cambará" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" />
@@ -16,14 +16,14 @@ import Comments from '../../components/Comments.astro';
   </section>
 
   <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.8; color: #334155;">
-    <p>Vou te jogar a real logo de cara: Cambará do Sul não é Gramado. Aqui a pegada é rústica e o frio castiga quando o "ruço" desce.</p>
+    <p>Vou te jogar a real logo de cara: Cambará do Sul não é Gramado. Aqui a pegada é rústica e o frio castiga quando o "ruço" desce cobrindo os cânions.</p>
     
     <h2>Destaques Gastronômicos</h2>
     <p><strong>1. Zuppa Restaurante:</strong> Sopas no pão italiano. Chegue cedo!</p>
     <p><strong>2. Galpão Costaneira:</strong> O clássico com música gaúcha e fogão a lenha.</p>
     <p><strong>3. Restaurante do Lago:</strong> Especialista em trutas frescas.</p>
 
-    <!-- OS COMENTÁRIOS ENTRAM AQUI -->
+    <!-- CHAMAMOS A PEÇA DE COMENTÁRIOS AQUI -->
     <Comments />
   </div>
 </Layout>
