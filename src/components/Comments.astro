@@ -1,28 +1,22 @@
 ---
 // src/components/Comments.astro
 ---
-<section class="comments-area">
-  <div class="comments-cta">
-    <h3>💬 Deixe sua dúvida ou sugestão!</h3>
-    <p>Sua participação ajuda outros viajantes. Não precisa de conta para comentar!</p>
+<section class="comments-area" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
+  <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
+    <h3 style="margin: 0; color: #0f172a;">💬 Deixe sua dúvida ou sugestão!</h3>
+    <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- Sistema Cusdis: Simples para o turista -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
     data-page-id={Astro.url.pathname}
     data-page-url={Astro.url.href}
     data-page-title={Astro.url.pathname}
-    data-theme="light">
+    data-theme="light"
+    data-lang="pt"> <!-- AQUI ESTÁ O PORTUGUÊS -->
   </div>
 
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  <!-- Script que carrega sempre, sem precisar de F5 -->
+  <script is:inline src="https://cusdis.com/js/cusdis.es.js"></script>
 </section>
-
-<style>
-  .comments-area { margin-top: 60px; padding: 30px; border-top: 2px solid #e2e8f0; background: #fff; border-radius: 20px; }
-  .comments-cta { background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981; }
-  .comments-cta h3 { margin: 0; color: #0f172a; font-size: 1.2rem; }
-  .comments-cta p { margin: 5px 0 0 0; color: #475569; font-size: 0.95rem; }
-</style>
