@@ -7,6 +7,7 @@
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
+  <!-- Área onde o comentário aparece -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
@@ -14,9 +15,24 @@
     data-page-url={Astro.url.href}
     data-page-title={Astro.url.pathname}
     data-theme="light"
-    data-lang="pt"> <!-- AQUI ESTÁ O PORTUGUÊS -->
+    data-lang="pt"> <!-- AQUI GARANTE O PORTUGUÊS -->
   </div>
 
-  <!-- Script que carrega sempre, sem precisar de F5 -->
-  <script is:inline src="https://cusdis.com/js/cusdis.es.js"></script>
+  <!-- SCRIPT INTELIGENTE: Carrega o comentário sem precisar de F5 -->
+  <script is:inline>
+    function loadCusdis() {
+      if (window.CUSDIS) {
+        window.CUSDIS.initial()
+      }
+    }
+
+    // Tenta carregar assim que a página abre
+    window.addEventListener('load', loadCusdis);
+    
+    // Se você estiver usando transições do Astro, isso garante que carregue ao mudar de página
+    document.addEventListener('astro:page-load', loadCusdis);
+    document.addEventListener('astro:after-swap', loadCusdis);
+  </script>
+  
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </section>
