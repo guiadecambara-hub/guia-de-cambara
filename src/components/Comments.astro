@@ -1,13 +1,13 @@
 ---
 // src/components/Comments.astro
 ---
-<section class="comments-area" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
+<div class="comments-wrapper" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
   <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
     <h3 style="margin: 0; color: #0f172a;">💬 Deixe sua dúvida ou sugestão!</h3>
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- Área onde o comentário aparece -->
+  <!-- Container onde o Cusdis será montado -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
@@ -19,7 +19,7 @@
   </div>
 
   <script is:inline>
-    // 1. TRADUÇÃO MANUAL GARANTIDA
+    // 1. TRADUÇÃO MANUAL BLINDADA
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
@@ -35,25 +35,29 @@
       "comment_has_been_sent": "Mensagem enviada! Ela aparecerá aqui assim que eu aprovar."
     };
 
-    // 2. FUNÇÃO QUE "FORÇA" O CARREGAMENTO
-    function loadCusdis() {
-      // Se o sistema já estiver na tela, a gente manda ele reiniciar
-      if (window.CUSDIS) {
-        window.CUSDIS.initial();
+    // 2. FUNÇÃO QUE "FORÇA" O DESPERTAR DO COMENTÁRIO
+    function restartCusdis() {
+      console.log("Reiniciando comentários...");
+      const container = document.getElementById('cusdis_thread');
+      if (container) {
+        container.innerHTML = ''; // Limpa o que tinha antes
+        if (window.CUSDIS) {
+          window.CUSDIS.initial(); // Manda o sistema carregar do zero
+        }
       }
     }
 
-    // Tenta carregar quando a página abre pela primeira vez
-    window.addEventListener('load', loadCusdis);
-
-    // Tenta carregar toda vez que o Astro troca de página (sem precisar de F5)
-    document.addEventListener('astro:page-load', loadCusdis);
-    document.addEventListener('astro:after-swap', loadCusdis);
+    // Executa assim que a página carrega
+    window.addEventListener('load', restartCusdis);
     
-    // Pequeno truque extra: se em 1 segundo não carregar, tenta de novo
-    setTimeout(loadCusdis, 1000);
+    // Executa toda vez que você clica em um link do menu (Astro Transitions)
+    document.addEventListener('astro:page-load', restartCusdis);
+    document.addEventListener('astro:after-swap', restartCusdis);
+
+    // Se em 2 segundos não aparecer, tenta de novo (Segurança extra)
+    setTimeout(restartCusdis, 2000);
   </script>
 
-  <!-- O motor do Cusdis -->
+  <!-- O arquivo que faz tudo funcionar -->
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-</section>
+</div>
