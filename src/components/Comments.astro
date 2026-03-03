@@ -7,7 +7,7 @@
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- Área do Comentário -->
+  <!-- Área onde o comentário aparece -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
@@ -18,9 +18,8 @@
     data-lang="pt">
   </div>
 
-  <!-- SCRIPT DE TRADUÇÃO E CARREGAMENTO AUTOMÁTICO -->
   <script is:inline>
-    // 1. TRADUÇÃO MANUAL (Garante o Português)
+    // 1. TRADUÇÃO MANUAL GARANTIDA
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
@@ -36,18 +35,25 @@
       "comment_has_been_sent": "Mensagem enviada! Ela aparecerá aqui assim que eu aprovar."
     };
 
-    // 2. FUNÇÃO PARA CARREGAR SEM F5
-    function renderCusdis() {
+    // 2. FUNÇÃO QUE "FORÇA" O CARREGAMENTO
+    function loadCusdis() {
+      // Se o sistema já estiver na tela, a gente manda ele reiniciar
       if (window.CUSDIS) {
         window.CUSDIS.initial();
       }
     }
 
-    // Executa sempre que a página carregar ou mudar
-    window.addEventListener('load', renderCusdis);
-    document.addEventListener('astro:page-load', renderCusdis);
-    document.addEventListener('astro:after-swap', renderCusdis);
+    // Tenta carregar quando a página abre pela primeira vez
+    window.addEventListener('load', loadCusdis);
+
+    // Tenta carregar toda vez que o Astro troca de página (sem precisar de F5)
+    document.addEventListener('astro:page-load', loadCusdis);
+    document.addEventListener('astro:after-swap', loadCusdis);
+    
+    // Pequeno truque extra: se em 1 segundo não carregar, tenta de novo
+    setTimeout(loadCusdis, 1000);
   </script>
 
+  <!-- O motor do Cusdis -->
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </section>
