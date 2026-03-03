@@ -1,166 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Comments from '../../components/Comments.astro';
 ---
 
 <Layout 
   title="Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)"
-  description="Guia completo de gastronomia em Cambará do Sul. Dicas de quem vive aqui sobre churrasco campeiro, fondue e os melhores restaurantes da Serra Gaúcha."
+  description="Guia completo de gastronomia em Cambará do Sul. Dicas reais de quem vive aqui sobre os melhores restaurantes da Serra Gaúcha."
 >
-  <!-- HERO: IMAGEM DE DESTAQUE -->
-  <section class="article-hero">
-    <img src="/card-onde-comer.webp" alt="Gastronomia típica de Cambará do Sul no fogão a lenha" class="hero-bg" />
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <nav class="breadcrumbs"><a href="/">Home</a> / Onde Comer</nav>
-      <h1>Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)</h1>
-      <p class="meta-info">Por <strong>Equipe Guia de Cambará</strong> • Atualizado em Março de 2026</p>
+  <section class="article-hero" style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden;">
+    <img src="/card-onde-comer.webp" alt="Gastronomia em Cambará" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" />
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
+    <div class="container">
+      <h1>Onde Comer em Cambará do Sul: 7 Restaurantes Testados</h1>
     </div>
   </section>
 
-  <div class="container article-layout">
-    <article class="main-content">
-      
-      <p class="intro-text">
-        Vou te jogar a real logo de cara: Cambará do Sul não é Gramado. Aqui a pegada é rústica, a bota volta suja de barro da trilha e o frio costuma castigar quando o "ruço" (aquela neblina pesada) desce no fim da tarde cobrindo os <a href="/o-que-fazer">cânions da região</a>.
-      </p>
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.8; color: #334155;">
+    <p>Vou te jogar a real logo de cara: Cambará do Sul não é Gramado. Aqui a pegada é rústica e o frio castiga quando o "ruço" desce.</p>
+    
+    <h2>Destaques Gastronômicos</h2>
+    <p><strong>1. Zuppa Restaurante:</strong> Sopas no pão italiano. Chegue cedo!</p>
+    <p><strong>2. Galpão Costaneira:</strong> O clássico com música gaúcha e fogão a lenha.</p>
+    <p><strong>3. Restaurante do Lago:</strong> Especialista em trutas frescas.</p>
 
-      <p>
-        Quando você voltar do Itaimbezinho, com o rosto gelado e a barriga roncando, você não vai querer errar na escolha. Eu já rodei essa cidade inteira atrás de comida boa e separei o que realmente vale o seu dinheiro. Tem desde o churrasco campeiro que desmancha na boca até aquele buffet farto que salva a vida do trilheiro.
-      </p>
-      
-      <p>Puxa a cadeira pra perto do fogão a lenha e anota aí.</p>
-
-      <!-- SEÇÃO 1 -->
-      <h2>Para esquentar o corpo: Fondues e Sopas</h2>
-      <p>Se você veio no inverno, a primeira coisa que vai procurar à noite é um lugar quentinho.</p>
-
-      <h3>1. Zuppa Restaurante</h3>
-      <p>O pulo do gato pra quem quer gastar menos que num fondue, mas comer tão bem quanto. O Zuppa serve sopas dentro do pão italiano. A de queijo com pinhão é um soco na cara de tão boa. O lugar é pequeno, tem uma lareira no meio e cheira a lenha queimada.</p>
-      
-      <div class="instagram-embed">
-         <p class="ig-hint">📸 [Cole aqui o código de incorporação do Instagram do Zuppa]</p>
-      </div>
-
-      <div class="expert-tip">
-        <strong>Aviso de amigo:</strong> Chegue antes das 19h30 ou prepare-se para esperar na rua passando frio.
-      </div>
-
-      <h3>2. A Taberna</h3>
-      <p>Quer impressionar a patroa ou o marido? É aqui. O clima é à meia-luz, super intimista, e o fondue na pedra é o carro-chefe. É mais caro? Sim, a conta vai dar uma pesada, mas as carnes são de primeira e não tem aquela muvuca de excursão.</p>
-
-      <!-- SEÇÃO 2 -->
-      <h2>Comida Campeira e o Famoso Churrasco</h2>
-      <p>Você está na terra dos tropeiros. Sair daqui sem comer um bom churrasco ou uma comida de panela de ferro é quase um crime.</p>
-
-      <h3>3. Galpão Costaneira</h3>
-      <p>Esse é o clássico dos clássicos. É pega-turista? Um pouco. Tem música gaúcha rolando, garçom pilchado (vestido a caráter) e bancos de madeira estilo CTG. Mas a comida... meu amigo, a comida é raiz. O feijão mexido, a polenta e a carne de panela servidos no fogão a lenha são de lamber os beiços.</p>
-
-      <h3>4. Alma RS (Parador Cambará)</h3>
-      <p>Se você tem um orçamento folgado e quer ter uma experiência de cair o queixo, reserve um almoço no Parador. O churrasco campeiro deles assa no fogo de chão e o restaurante tem janelões com vista para os campos de altitude.</p>
-
-      <!-- SEÇÃO 3 -->
-      <h2>O Pulo do Gato: Bom, Farto e Barato (ou quase)</h2>
-
-      <h3>5. O Casarão (Galeteria do Padre)</h3>
-      <p>Fica bem no centrinho. É um restaurante com comida com gosto de casa de vó. Eles servem um rodízio de truta e galeto que é espetacular. A polenta frita estala na boca. É onde muitos guias locais comem.</p>
-
-      <h3>6. Restaurante do Lago</h3>
-      <p>Fica no terreno do Cambará Eco Hotel. A especialidade da casa é a Truta. Peça a truta com molho de alho-poró ou pinhão. O prato é super bem servido e você come olhando para um lago belíssimo.</p>
-
-      <h3>7. Pub Du Perau</h3>
-      <p>Bateu a preguiça de comida pesada e quer um lanche com chope artesanal? O Du Perau tem uma vibe rock'n'roll. A pedida certeira é o "Hambúrguer Tropeiro" (hambúrguer de linguiça, queijo colonial e rúcula).</p>
-
-      <!-- AVISOS EEAT -->
-      <section class="warnings-box">
-        <h2>⚠️ 3 Avisos que Ninguém te Dá (Mas eu dou)</h2>
-        <ul>
-          <li><strong>A cidade dorme cedo:</strong> 21h30 já tem restaurante fechando a cozinha. Saia para jantar cedo.</li>
-          <li><strong>Dinheiro vivo:</strong> O sinal de internet às vezes some do nada. Leve uns trocados na carteira.</li>
-          <li><strong>Faça reserva:</strong> Em julho e agosto, os lugares lotam rápido.</li>
-        </ul>
-      </section>
-
-      <!-- FAQ COMPLETO -->
-      <section class="faq-section">
-        <h2>FAQ: Dúvidas Frequentes sobre onde comer em Cambará do Sul</h2>
-        
-        <div class="faq-item">
-          <h4>Qual é a comida típica de Cambará do Sul?</h4>
-          <p>A culinária local é uma mistura da tradição tropeira com ingredientes da serra. Os pratos mais típicos são o churrasco de vala, a truta, o queijo colonial e receitas com pinhão.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Onde comer barato em Cambará do Sul?</h4>
-          <p>Para economizar sem perder a qualidade, o almoço no Galpão Costaneira e no Casarão oferecem um excelente custo-benefício, com comida farta e caseira.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Precisa fazer reserva nos restaurantes em Cambará?</h4>
-          <p>Durante o inverno (junho a agosto) e em feriados prolongados, sim! Restaurantes menores como o Zuppa e o Alma RS lotam rápido. Se viajar na baixa temporada, é mais tranquilo chegar na hora.</p>
-        </div>
-      </section>
-
-      <p class="final-cta">
-        Ainda tem dúvidas? <a href="/contato">Mande uma mensagem</a> para nossa equipe ou conheça mais <a href="/sobre-nos">sobre nossa história</a>.
-      </p>
-
-    </article>
-
-    <!-- SIDEBAR AFILIADOS -->
-    <aside class="sidebar">
-      <div class="affiliate-card">
-        <h4>Planeje sua Estadia</h4>
-        <p>Ficar no centro facilita o acesso aos melhores restaurantes à noite.</p>
-        <a href="https://www.booking.com/city/br/cambara-do-sul.html?aid=SEU_ID" target="_blank" class="btn-affiliate">Ver Pousadas no Booking</a>
-      </div>
-    </aside>
+    <!-- OS COMENTÁRIOS ENTRAM AQUI -->
+    <Comments />
   </div>
 </Layout>
-
-<style>
-  .article-hero { position: relative; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; }
-  .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: -1; }
-  .hero-content h1 { font-size: 2.8rem; margin: 15px 0; max-width: 900px; line-height: 1.2; }
-  .breadcrumbs { font-size: 0.8rem; text-transform: uppercase; color: #10b981; margin-bottom: 10px; }
-  .breadcrumbs a { color: white; text-decoration: none; }
-
-  .article-layout { display: grid; grid-template-columns: 2.5fr 1fr; gap: 50px; padding: 60px 20px; }
-  
-  .main-content { line-height: 1.8; color: #334155; font-size: 1.1rem; }
-  .main-content h2 { color: #0f172a; font-size: 2rem; margin: 45px 0 20px 0; border-bottom: 3px solid #10b981; display: inline-block; padding-bottom: 5px; }
-  .main-content h3 { color: #0f172a; font-size: 1.6rem; margin-top: 35px; font-weight: 700; }
-  .main-content p { margin-bottom: 20px; }
-  .main-content a { color: #10b981; font-weight: bold; text-decoration: none; }
-  .main-content a:hover { text-decoration: underline; }
-
-  .intro-text { font-size: 1.3rem; color: #1e293b; font-weight: 500; border-left: 5px solid #10b981; padding-left: 20px; margin-bottom: 40px; }
-
-  .expert-tip { background: #ecfdf5; border-radius: 10px; padding: 20px; margin: 25px 0; color: #065f46; font-size: 1rem; }
-  .warnings-box { background: #fff7ed; border: 1px solid #ffedd5; padding: 35px; border-radius: 20px; margin: 60px 0; }
-  .warnings-box h2 { color: #9a3412 !important; border-bottom-color: #fdba74 !important; }
-  .warnings-box ul { padding-left: 20px; }
-  .warnings-box li { margin-bottom: 10px; color: #7c2d12; }
-
-  .instagram-embed { background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 15px; padding: 30px; text-align: center; margin: 30px 0; }
-  .ig-hint { font-size: 0.85rem; color: #94a3b8; }
-
-  .faq-section { background: #f1f5f9; padding: 40px; border-radius: 20px; margin: 60px 0; }
-  .faq-item { margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; }
-  .faq-item:last-child { border: none; }
-  .faq-item h4 { color: #0f172a; margin-bottom: 10px; font-size: 1.2rem; }
-
-  .sidebar { position: sticky; top: 120px; height: fit-content; }
-  .affiliate-card { background: #0f172a; color: white; padding: 35px; border-radius: 25px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-  .btn-affiliate { background: #10b981; color: white; padding: 15px 25px; display: inline-block; border-radius: 10px; text-decoration: none; margin-top: 20px; font-weight: bold; transition: 0.3s; }
-  .btn-affiliate:hover { background: #059669; transform: translateY(-3px); }
-
-  @media (max-width: 900px) {
-    .article-layout { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-    .hero-content h1 { font-size: 1.8rem; }
-    .article-hero { height: 350px; }
-  }
-</style>
-
-<script async src="//www.instagram.com/embed.js"></script>
