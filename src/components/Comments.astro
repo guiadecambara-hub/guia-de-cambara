@@ -7,7 +7,7 @@
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- Área onde o comentário aparece -->
+  <!-- Área do Comentário -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
@@ -15,24 +15,39 @@
     data-page-url={Astro.url.href}
     data-page-title={Astro.url.pathname}
     data-theme="light"
-    data-lang="pt"> <!-- AQUI GARANTE O PORTUGUÊS -->
+    data-lang="pt">
   </div>
 
-  <!-- SCRIPT INTELIGENTE: Carrega o comentário sem precisar de F5 -->
+  <!-- SCRIPT DE TRADUÇÃO E CARREGAMENTO AUTOMÁTICO -->
   <script is:inline>
-    function loadCusdis() {
+    // 1. TRADUÇÃO MANUAL (Garante o Português)
+    window.CUSDIS_LOCALE = {
+      "powered_by": "Comentários por",
+      "post": "Enviar Comentário",
+      "loading": "Carregando...",
+      "email": "E-mail (opcional)",
+      "nickname": "Seu Nome",
+      "reply_placeholder": "Escreva aqui sua dúvida ou mensagem...",
+      "reply_btn": "Responder",
+      "sending": "Enviando...",
+      "mod_badge": "Especialista",
+      "content_is_required": "O conteúdo é obrigatório",
+      "nickname_is_required": "O nome é obrigatório",
+      "comment_has_been_sent": "Mensagem enviada! Ela aparecerá aqui assim que eu aprovar."
+    };
+
+    // 2. FUNÇÃO PARA CARREGAR SEM F5
+    function renderCusdis() {
       if (window.CUSDIS) {
-        window.CUSDIS.initial()
+        window.CUSDIS.initial();
       }
     }
 
-    // Tenta carregar assim que a página abre
-    window.addEventListener('load', loadCusdis);
-    
-    // Se você estiver usando transições do Astro, isso garante que carregue ao mudar de página
-    document.addEventListener('astro:page-load', loadCusdis);
-    document.addEventListener('astro:after-swap', loadCusdis);
+    // Executa sempre que a página carregar ou mudar
+    window.addEventListener('load', renderCusdis);
+    document.addEventListener('astro:page-load', renderCusdis);
+    document.addEventListener('astro:after-swap', renderCusdis);
   </script>
-  
+
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </section>
