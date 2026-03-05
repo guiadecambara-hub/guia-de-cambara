@@ -7,77 +7,55 @@ import Comments from '../../components/Comments.astro';
   title="Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)"
   description="Guia gastronômico completo de Cambará do Sul. Conheça os 7 melhores restaurantes, do churrasco campeiro ao fondue, com dicas de quem vive aqui."
 >
-  <section class="article-hero" style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden;">
-    <img src="/card-onde-comer.webp" alt="Gastronomia em Cambará" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" />
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
-    <div class="container">
-      <h1 style="font-size: 2.5rem; max-width: 800px;">Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)</h1>
+  <section class="article-hero">
+    <img src="/card-onde-comer.webp" alt="Gastronomia em Cambará" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Onde Comer em Cambará do Sul: 7 Restaurantes Testados (Sem Furada)</h1>
     </div>
   </section>
 
-  <div class="container" style="display: grid; grid-template-columns: 2.5fr 1fr; gap: 50px; padding: 60px 20px;">
-    <article style="line-height: 1.8; color: #334155; font-size: 1.1rem;">
+  <div class="container article-layout">
+    <article class="main-content">
       
-      <p style="font-size: 1.2rem; color: #1e293b; font-weight: 500; border-left: 5px solid #10b981; padding-left: 20px;">
+      <p class="intro-text">
         Vou te jogar a real logo de cara: Cambará do Sul não é Gramado. Aqui a pegada é rústica, a bota volta suja de barro da trilha e o frio costuma castigar quando o "ruço" (aquela neblina pesada) desce no fim da tarde cobrindo os cânions.
       </p>
 
       <p>Quando você voltar do Itaimbezinho, com o rosto gelado e a barriga roncando, você não vai querer errar na escolha. Eu já rodei essa cidade inteira atrás de comida boa e separei o que realmente vale o seu dinheiro.</p>
 
-      <h2 style="color: #0f172a; margin-top: 40px;">Para esquentar o corpo: Fondues e Sopas</h2>
+      <h2>Para esquentar o corpo: Fondues e Sopas</h2>
       
-      <!-- RESTAURANTE 1 -->
       <h3>1. Zuppa Restaurante</h3>
       <p>O pulo do gato pra quem quer gastar menos que num fondue, mas comer tão bem quanto. O Zuppa serve sopas dentro do pão italiano. A de queijo com pinhão é um soco na cara de tão boa. O lugar é pequeno e tem lareira.</p>
       
-      <!-- BOTÃO INSTAGRAM DO ZUPPA -->
-      <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-        <div>
-          <h4 style="margin: 0; color: #0f172a; font-size: 1rem;">Veja o cardápio e fotos reais</h4>
-          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Acesse o Instagram oficial do restaurante.</p>
+      <!-- CAIXA DO INSTAGRAM COM A FOTO NO MEIO -->
+      <div class="insta-box">
+        <div class="insta-text">
+          <h4>Veja o cardápio e fotos reais</h4>
+          <p>Acesse o Instagram oficial do restaurante.</p>
         </div>
-        <a href="https://www.instagram.com/zuppamassasesopas/" target="_blank" style="background: #e1306c; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+        
+        <!-- FOTO DO RESTAURANTE (Suba uma foto pequena na pasta public com este nome) -->
+        <img src="/thumb-zuppa.webp" alt="Prato do Zuppa" class="insta-thumb" />
+        
+        <a href="LINK_DO_INSTA_AQUI" target="_blank" class="btn-insta">
           📸 Ver no Instagram
         </a>
       </div>
 
-      <!-- RESTAURANTE 2 -->
       <h3>2. A Taberna</h3>
       <p>Quer impressionar? É aqui. O clima é à meia-luz e o fondue na pedra é o carro-chefe. É mais caro, mas as carnes são de primeira.</p>
 
-      <!-- BOTÃO INSTAGRAM DA TABERNA -->
-      <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-        <div>
-          <h4 style="margin: 0; color: #0f172a; font-size: 1rem;">Veja o cardápio e fotos reais</h4>
-          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Acesse o Instagram oficial do restaurante.</p>
-        </div>
-        <a href="https://www.instagram.com/restauranteataberna_cambara/" target="_blank" style="background: #e1306c; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
-          📸 Ver no Instagram
-        </a>
-      </div>
+      <h2>Comida Campeira e o Famoso Churrasco</h2>
 
-      <h2 style="color: #0f172a; margin-top: 40px;">Comida Campeira e o Famoso Churrasco</h2>
-
-      <!-- RESTAURANTE 3 -->
       <h3>3. Galpão Costaneira</h3>
       <p>O clássico dos clássicos. Tem música gaúcha e garçom pilchado. A comida é raiz: feijão mexido, polenta e carne de panela servidos no fogão a lenha.</p>
 
-      <!-- BOTÃO INSTAGRAM DO GALPÃO -->
-      <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-        <div>
-          <h4 style="margin: 0; color: #0f172a; font-size: 1rem;">Veja o cardápio e fotos reais</h4>
-          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Acesse o Instagram oficial do restaurante.</p>
-        </div>
-        <a href="https://www.instagram.com/familiacostaneira/" target="_blank" style="background: #e1306c; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
-          📸 Ver no Instagram
-        </a>
-      </div>
-
-      <!-- RESTAURANTE 4 -->
       <h3>4. Alma RS (Parador Cambará)</h3>
       <p>Para uma experiência de cair o queixo. Churrasco campeiro no fogo de chão com vista para os campos de altitude. Precisa ir de carro.</p>
 
-      <h2 style="color: #0f172a; margin-top: 40px;">O Pulo do Gato: Bom, Farto e Barato</h2>
+      <h2>O Pulo do Gato: Bom, Farto e Barato</h2>
 
       <h3>5. O Casarão (Galeteria do Padre)</h3>
       <p>Comida com gosto de casa de vó. Rodízio de truta e galeto espetacular. É onde os guias locais comem.</p>
@@ -88,8 +66,8 @@ import Comments from '../../components/Comments.astro';
       <h3>7. Pub Du Perau</h3>
       <p>Vibe rock'n'roll e chope artesanal. Peça o "Hambúrguer Tropeiro" (feito de linguiça e queijo colonial).</p>
 
-      <div style="background: #fff7ed; padding: 30px; border-radius: 15px; margin: 40px 0; border: 1px solid #ffedd5;">
-        <h2 style="color: #9a3412; margin-top: 0;">⚠️ 3 Avisos que Ninguém te Dá</h2>
+      <div class="warnings-box">
+        <h2>⚠️ 3 Avisos que Ninguém te Dá</h2>
         <ul>
           <li><strong>A cidade dorme cedo:</strong> 21h30 as cozinhas fecham.</li>
           <li><strong>Dinheiro vivo:</strong> A internet cai muito. Tenha sempre um reserva.</li>
@@ -97,7 +75,7 @@ import Comments from '../../components/Comments.astro';
         </ul>
       </div>
 
-      <h2 style="color: #0f172a;">FAQ: Dúvidas Frequentes</h2>
+      <h2>FAQ: Dúvidas Frequentes</h2>
       <p><strong>Qual a comida típica?</strong> Churrasco de vala, truta e pratos com pinhão.</p>
       <p><strong>Onde comer barato?</strong> Galpão Costaneira e Casarão no almoço.</p>
       <p><strong>Precisa de reserva?</strong> No inverno (junho a agosto), sim! Principalmente no Zuppa e Alma RS.</p>
@@ -105,12 +83,51 @@ import Comments from '../../components/Comments.astro';
       <Comments />
     </article>
 
-    <aside>
-      <div style="background: #0f172a; color: white; padding: 30px; border-radius: 20px; position: sticky; top: 100px;">
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar-container">
+      <div class="affiliate-card">
         <h3>Planeje sua Viagem</h3>
         <p>Garanta sua pousada no centro para ficar perto dos restaurantes.</p>
-        <a href="https://www.booking.com/city/br/cambara-do-sul.html?aid=SEU_ID" style="background: #10b981; color: white; padding: 12px 20px; display: inline-block; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px;">Ver Pousadas</a>
+        <a href="https://www.booking.com/city/br/cambara-do-sul.html?aid=SEU_ID" target="_blank" class="btn-affiliate">Ver Pousadas</a>
       </div>
     </aside>
   </div>
 </Layout>
+
+<style>
+  /* TOPO DO ARTIGO */
+  .article-hero { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; }
+  .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1; }
+  .hero-content h1 { font-size: 2.5rem; max-width: 800px; margin: 0 auto; }
+
+  /* LAYOUT PRINCIPAL */
+  .article-layout { display: grid; grid-template-columns: 2.5fr 1fr; gap: 50px; padding: 60px 20px; }
+  .main-content { line-height: 1.8; color: #334155; font-size: 1.1rem; }
+  .intro-text { font-size: 1.2rem; color: #1e293b; font-weight: 500; border-left: 5px solid #10b981; padding-left: 20px; margin-bottom: 40px; }
+  .main-content h2 { color: #0f172a; font-size: 1.8rem; margin-top: 40px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+  .main-content h3 { color: #10b981; font-size: 1.4rem; margin-top: 30px; }
+  
+  /* CAIXA DO INSTAGRAM */
+  .insta-box { background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 25px 0; }
+  .insta-text h4 { margin: 0; color: #0f172a; font-size: 1.1rem; }
+  .insta-text p { margin: 5px 0 0 0; color: #64748b; font-size: 0.9rem; }
+  .insta-thumb { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e1306c; }
+  .btn-insta { background: #e1306c; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; white-space: nowrap; transition: 0.3s; }
+  .btn-insta:hover { opacity: 0.9; transform: scale(1.02); }
+
+  /* AVISOS E SIDEBAR */
+  .warnings-box { background: #fff7ed; padding: 30px; border-radius: 15px; margin: 40px 0; border: 1px solid #ffedd5; }
+  .warnings-box h2 { color: #9a3412 !important; margin-top: 0; border: none !important; }
+  .sidebar-container { position: sticky; top: 100px; height: fit-content; }
+  .affiliate-card { background: #0f172a; color: white; padding: 30px; border-radius: 20px; text-align: center; }
+  .btn-affiliate { background: #10b981; color: white; padding: 12px 20px; display: inline-block; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; width: 100%; box-sizing: border-box; }
+
+  /* AJUSTE PARA O CELULAR (RESOLVE O PROBLEMA DO PRINT) */
+  @media (max-width: 900px) {
+    .article-layout { grid-template-columns: 1fr; } /* Força o texto a ocupar a tela toda */
+    .sidebar-container { display: none; } /* Esconde a barra lateral no celular */
+    .insta-box { flex-direction: column; text-align: center; } /* Empilha a foto e o botão no celular */
+    .hero-content h1 { font-size: 1.8rem; }
+  }
+</style>
