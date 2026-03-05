@@ -1,13 +1,12 @@
 ---
 // src/components/Comments.astro
 ---
-<div class="comments-container" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
-  <div style="background: #f1f5f9; padding: 25px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
+<div class="comments-container" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0; min-height: 200px;">
+  <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
     <h3 style="margin: 0; color: #0f172a;">💬 Deixe sua dúvida ou sugestão!</h3>
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- Onde o comentário vai aparecer -->
   <div 
     id="cusdis_thread"
     data-host="https://cusdis.com"
@@ -19,7 +18,7 @@
   ></div>
 
   <script is:inline>
-    // 1. TRADUÇÃO COMPLETA PARA PORTUGUÊS
+    // 1. FORÇA A TRADUÇÃO PARA PORTUGUÊS
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
@@ -35,25 +34,26 @@
       "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
     };
 
-    function runCusdis() {
-      // Limpa qualquer erro anterior e força o carregamento
-      if (window.CUSDIS) {
+    // 2. FUNÇÃO QUE "ACORDA" O SISTEMA SEM PRECISAR DE F5
+    function forceCusdis() {
+      const container = document.getElementById('cusdis_thread');
+      if (container && window.CUSDIS) {
+        // Limpa o conteúdo interno para não duplicar
+        container.innerHTML = '';
+        // Reinicia o sistema
         window.CUSDIS.initial();
-      } else {
-        // Se o script ainda não carregou, ele cria um novo
-        const script = document.createElement('script');
-        script.src = 'https://cusdis.com/js/cusdis.es.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
       }
     }
 
-    // ISSO RESOLVE O PROBLEMA DO F5 NO ASTRO
-    // Executa no carregamento inicial
-    window.addEventListener('load', runCusdis);
-    // Executa toda vez que você clica no menu e troca de página
-    document.addEventListener('astro:page-load', runCusdis);
-    document.addEventListener('astro:after-swap', runCusdis);
+    // Tenta carregar em 3 momentos diferentes para garantir o sucesso
+    window.addEventListener('load', forceCusdis);
+    document.addEventListener('astro:page-load', forceCusdis);
+    document.addEventListener('astro:after-swap', forceCusdis);
+
+    // Se houver atraso na internet, tenta de novo após 1 segundo
+    setTimeout(forceCusdis, 1000);
   </script>
+
+  <!-- O motor que faz tudo funcionar -->
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
