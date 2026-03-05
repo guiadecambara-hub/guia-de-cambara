@@ -26,32 +26,63 @@ import Comments from '../../components/Comments.astro';
 
       <h2>Para esquentar o corpo: Fondues e Sopas</h2>
       
+      <!-- RESTAURANTE 1 -->
       <h3>1. Zuppa Restaurante</h3>
       <p>O pulo do gato pra quem quer gastar menos que num fondue, mas comer tão bem quanto. O Zuppa serve sopas dentro do pão italiano. A de queijo com pinhão é um soco na cara de tão boa. O lugar é pequeno e tem lareira.</p>
       
-      <!-- CAIXA DO INSTAGRAM COM A FOTO NO MEIO -->
+      <!-- CAIXA DO INSTAGRAM (NOVO DESIGN GRANDE) -->
       <div class="insta-box">
-        <div class="insta-text">
-          <h4>Veja o cardápio e fotos reais</h4>
-          <p>Acesse o Instagram oficial do restaurante.</p>
-        </div>
-        
-        <!-- FOTO DO RESTAURANTE (Suba uma foto pequena na pasta public com este nome) -->
         <img src="/thumb-zuppa.webp" alt="Prato do Zuppa" class="insta-thumb" />
-        
-        <a href="LINK_DO_INSTA_AQUI" target="_blank" class="btn-insta">
-          📸 Ver no Instagram
-        </a>
+        <div class="insta-content-wrapper">
+          <div class="insta-text">
+            <h4>Veja o cardápio e fotos reais</h4>
+            <p>Acesse o Instagram oficial do restaurante.</p>
+          </div>
+          <a href="COLE_O_LINK_DO_INSTA_DO_ZUPPA_AQUI" target="_blank" class="btn-insta">
+            📸 Ver no Instagram
+          </a>
+        </div>
       </div>
 
+      <!-- RESTAURANTE 2 -->
       <h3>2. A Taberna</h3>
       <p>Quer impressionar? É aqui. O clima é à meia-luz e o fondue na pedra é o carro-chefe. É mais caro, mas as carnes são de primeira.</p>
 
+      <!-- CAIXA DO INSTAGRAM (NOVO DESIGN GRANDE) -->
+      <div class="insta-box">
+        <img src="/thumb-zuppa.webp" alt="Prato da Taberna" class="insta-thumb" />
+        <div class="insta-content-wrapper">
+          <div class="insta-text">
+            <h4>Veja o cardápio e fotos reais</h4>
+            <p>Acesse o Instagram oficial do restaurante.</p>
+          </div>
+          <a href="COLE_O_LINK_DO_INSTA_DA_TABERNA_AQUI" target="_blank" class="btn-insta">
+            📸 Ver no Instagram
+          </a>
+        </div>
+      </div>
+
       <h2>Comida Campeira e o Famoso Churrasco</h2>
 
+      <!-- RESTAURANTE 3 -->
       <h3>3. Galpão Costaneira</h3>
       <p>O clássico dos clássicos. Tem música gaúcha e garçom pilchado. A comida é raiz: feijão mexido, polenta e carne de panela servidos no fogão a lenha.</p>
 
+      <!-- CAIXA DO INSTAGRAM (NOVO DESIGN GRANDE) -->
+      <div class="insta-box">
+        <img src="/thumb-zuppa.webp" alt="Prato do Galpão Costaneira" class="insta-thumb" />
+        <div class="insta-content-wrapper">
+          <div class="insta-text">
+            <h4>Veja o cardápio e fotos reais</h4>
+            <p>Acesse o Instagram oficial do restaurante.</p>
+          </div>
+          <a href="COLE_O_LINK_DO_INSTA_DO_GALPAO_AQUI" target="_blank" class="btn-insta">
+            📸 Ver no Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- RESTAURANTE 4 -->
       <h3>4. Alma RS (Parador Cambará)</h3>
       <p>Para uma experiência de cair o queixo. Churrasco campeiro no fogo de chão com vista para os campos de altitude. Precisa ir de carro.</p>
 
@@ -108,12 +139,34 @@ import Comments from '../../components/Comments.astro';
   .main-content h2 { color: #0f172a; font-size: 1.8rem; margin-top: 40px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
   .main-content h3 { color: #10b981; font-size: 1.4rem; margin-top: 30px; }
   
-  /* CAIXA DO INSTAGRAM */
-  .insta-box { background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 25px 0; }
-  .insta-text h4 { margin: 0; color: #0f172a; font-size: 1.1rem; }
-  .insta-text p { margin: 5px 0 0 0; color: #64748b; font-size: 0.9rem; }
-  .insta-thumb { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e1306c; }
-  .btn-insta { background: #e1306c; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; white-space: nowrap; transition: 0.3s; }
+  /* --- NOVO ESTILO DA CAIXA DO INSTAGRAM --- */
+  .insta-box { 
+    background: #f8fafc; 
+    padding: 20px; 
+    border-radius: 15px; 
+    border: 1px solid #e2e8f0; 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+    margin: 25px 0; 
+  }
+  .insta-thumb { 
+    width: 220px; /* FOTO GRANDE NO PC */
+    height: 150px; 
+    border-radius: 10px; 
+    object-fit: cover; 
+    border: 2px solid #e1306c; 
+    flex-shrink: 0; /* Impede a foto de amassar */
+  }
+  .insta-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .insta-text h4 { margin: 0; color: #0f172a; font-size: 1.2rem; }
+  .insta-text p { margin: 5px 0 0 0; color: #64748b; font-size: 0.95rem; }
+  .btn-insta { background: #e1306c; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
   .btn-insta:hover { opacity: 0.9; transform: scale(1.02); }
 
   /* AVISOS E SIDEBAR */
@@ -123,11 +176,24 @@ import Comments from '../../components/Comments.astro';
   .affiliate-card { background: #0f172a; color: white; padding: 30px; border-radius: 20px; text-align: center; }
   .btn-affiliate { background: #10b981; color: white; padding: 12px 20px; display: inline-block; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; width: 100%; box-sizing: border-box; }
 
-  /* AJUSTE PARA O CELULAR (RESOLVE O PROBLEMA DO PRINT) */
+  /* --- AJUSTE PARA O CELULAR --- */
   @media (max-width: 900px) {
-    .article-layout { grid-template-columns: 1fr; } /* Força o texto a ocupar a tela toda */
-    .sidebar-container { display: none; } /* Esconde a barra lateral no celular */
-    .insta-box { flex-direction: column; text-align: center; } /* Empilha a foto e o botão no celular */
+    .article-layout { grid-template-columns: 1fr; } 
+    .sidebar-container { display: none; } 
     .hero-content h1 { font-size: 1.8rem; }
+    
+    /* FOTO GIGANTE NO CELULAR */
+    .insta-box { 
+      flex-direction: column; /* Coloca um embaixo do outro */
+      text-align: center; 
+      padding: 15px;
+    }
+    .insta-thumb { 
+      width: 100%; /* Ocupa toda a largura da caixinha */
+      height: 200px; /* Fica bem alta para ver a comida */
+    }
+    .insta-content-wrapper {
+      align-items: center; /* Centraliza o botão */
+    }
   }
 </style>
