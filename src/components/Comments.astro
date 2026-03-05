@@ -7,33 +7,63 @@
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <!-- O sistema de comentários -->
-  <div id="cusdis_thread"
-    data-host="https://cusdis.com"
-    data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
-    data-page-id={Astro.url.pathname}
-    data-page-url={Astro.url.href}
-    data-page-title={Astro.url.pathname}
-    data-theme="light">
-  </div>
+  <!-- O Sensor (cusdis-component) -->
+  <cusdis-component>
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
+      data-page-id={Astro.url.pathname}
+      data-page-url={Astro.url.href}
+      data-page-title={Astro.url.pathname}
+      data-theme="light"
+      data-lang="pt">
+    </div>
+  </cusdis-component>
 
-  <!-- Script que traduz e liga o sistema -->
-  <script is:inline>
-    window.CUSDIS_LOCALE = {
-      "powered_by": "Comentários por",
-      "post": "Enviar Comentário",
-      "loading": "Carregando...",
-      "email": "E-mail (opcional)",
-      "nickname": "Seu Nome",
-      "reply_placeholder": "Escreva aqui sua mensagem...",
-      "reply_btn": "Responder",
-      "sending": "Enviando...",
-      "mod_badge": "Especialista",
-      "content_is_required": "Escreva algo antes de enviar",
-      "nickname_is_required": "Diga-nos o seu nome",
-      "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
-    };
+  <script>
+    // Esse código roda toda vez que a caixa aparece na tela
+    class CusdisComponent extends HTMLElement {
+      connectedCallback() {
+        // 1. Trava o idioma em português
+        window.CUSDIS_LOCALE = {
+          "powered_by": "Comentários por",
+          "post": "Enviar Comentário",
+          "loading": "Carregando...",
+          "email": "E-mail (opcional)",
+          "nickname": "Seu Nome",
+          "reply_placeholder": "Escreva aqui sua dúvida ou mensagem...",
+          "reply_btn": "Responder",
+          "sending": "Enviando...",
+          "mod_badge": "Especialista",
+          "content_is_required": "O conteúdo é obrigatório",
+          "nickname_is_required": "O nome é obrigatório",
+          "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
+        };
+
+        // 2. Injeta o sistema à força
+        const scriptId = 'cusdis-script-tag';
+        let script = document.getElementById(scriptId);
+
+        if (!script) {
+          script = document.createElement('script');
+          script.id = scriptId;
+          script.src = 'https://cusdis.com/js/cusdis.es.js';
+          script.async = true;
+          document.body.appendChild(script);
+        } else {
+          // Se você mudou de página, ele reinicia em 1 décimo de segundo
+          setTimeout(() => {
+            if (window.CUSDIS) {
+              window.CUSDIS.initial();
+            }
+          }, 100);
+        }
+      }
+    }
+    
+    // Ativa o sensor
+    if (!customElements.get('cusdis-component')) {
+      customElements.define('cusdis-component', CusdisComponent);
+    }
   </script>
-  
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
