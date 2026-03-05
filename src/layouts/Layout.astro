@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -20,9 +19,6 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<link rel="apple-touch-icon" href="/favicon.webp" />
-		
-		<!-- Isso faz o site carregar rápido, mas exige o script especial nos comentários -->
-		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
@@ -35,6 +31,6 @@ const { title, description } = Astro.props;
 
 <style is:global>
 	:root { --primary-green: #10b981; --dark-blue: #0f172a; }
-	body { margin: 0; font-family: system-ui, sans-serif; background-color: #f8fafc; }
+	body { margin: 0; font-family: system-ui, sans-serif; background-color: #f8fafc; color: #334155; }
 	.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 </style>

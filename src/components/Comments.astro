@@ -17,22 +17,32 @@
   </div>
 
   <script is:inline>
-    // Tradução manual garantida
+    // GARANTE A TRADUÇÃO PARA PORTUGUÊS
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
       "loading": "Carregando...",
       "email": "E-mail (opcional)",
       "nickname": "Seu Nome",
-      "reply_placeholder": "Escreva sua mensagem aqui...",
+      "reply_placeholder": "Escreva aqui sua dúvida ou mensagem...",
       "reply_btn": "Responder",
       "sending": "Enviando...",
       "mod_badge": "Especialista",
-      "content_is_required": "Escreva algo antes de enviar",
-      "nickname_is_required": "Diga-nos o seu nome",
-      "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
+      "content_is_required": "O conteúdo é obrigatório",
+      "nickname_is_required": "O nome é obrigatório",
+      "comment_has_been_sent": "Mensagem enviada! Ela aparecerá aqui assim que eu aprovar."
     };
+
+    // FUNÇÃO QUE CARREGA O COMENTÁRIO
+    function initCusdis() {
+      if (window.CUSDIS) {
+        window.CUSDIS.initial();
+      }
+    }
+
+    // Executa ao abrir a página
+    window.addEventListener('load', initCusdis);
   </script>
-  
+
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
