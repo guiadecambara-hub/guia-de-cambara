@@ -1,69 +1,54 @@
 ---
 // src/components/Comments.astro
 ---
-<div class="comments-area" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
-  <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
-    <h3 style="margin: 0; color: #0f172a;">💬 Deixe sua dúvida ou sugestão!</h3>
-    <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
+<section class="comments-area" style="margin-top: 60px; padding: 30px; border-top: 2px solid #e2e8f0; background: #ffffff; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+  
+  <div style="background: #ecfdf5; padding: 20px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #10b981;">
+    <h3 style="margin: 0; color: #065f46; font-size: 1.3rem;">💬 Deixe seu comentário ou dúvida!</h3>
+    <p style="margin: 5px 0 0 0; color: #047857;">Eu leio e respondo pessoalmente todas as mensagens para te ajudar a planejar a melhor viagem para Cambará do Sul.</p>
   </div>
 
-  <!-- O Sensor (cusdis-component) -->
-  <cusdis-component>
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
-      data-page-id={Astro.url.pathname}
-      data-page-url={Astro.url.href}
-      data-page-title={Astro.url.pathname}
-      data-theme="light"
-      data-lang="pt">
-    </div>
-  </cusdis-component>
-
-  <script>
-    // Esse código roda toda vez que a caixa aparece na tela
-    class CusdisComponent extends HTMLElement {
-      connectedCallback() {
-        // 1. Trava o idioma em português
-        window.CUSDIS_LOCALE = {
-          "powered_by": "Comentários por",
-          "post": "Enviar Comentário",
-          "loading": "Carregando...",
-          "email": "E-mail (opcional)",
-          "nickname": "Seu Nome",
-          "reply_placeholder": "Escreva aqui sua dúvida ou mensagem...",
-          "reply_btn": "Responder",
-          "sending": "Enviando...",
-          "mod_badge": "Especialista",
-          "content_is_required": "O conteúdo é obrigatório",
-          "nickname_is_required": "O nome é obrigatório",
-          "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
-        };
-
-        // 2. Injeta o sistema à força
-        const scriptId = 'cusdis-script-tag';
-        let script = document.getElementById(scriptId);
-
-        if (!script) {
-          script = document.createElement('script');
-          script.id = scriptId;
-          script.src = 'https://cusdis.com/js/cusdis.es.js';
-          script.async = true;
-          document.body.appendChild(script);
-        } else {
-          // Se você mudou de página, ele reinicia em 1 décimo de segundo
-          setTimeout(() => {
-            if (window.CUSDIS) {
-              window.CUSDIS.initial();
-            }
-          }, 100);
-        }
-      }
-    }
+  <!-- FORMULÁRIO DE COMENTÁRIOS (VIA FORMSPREE) -->
+  <form action="https://formspree.io/f/mqedzlen" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
     
-    // Ativa o sensor
-    if (!customElements.get('cusdis-component')) {
-      customElements.define('cusdis-component', CusdisComponent);
+    <!-- Campo invisível que avisa no seu e-mail de qual página o comentário veio -->
+    <input type="hidden" name="Página_do_Comentário" value={Astro.url.pathname} />
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <input type="text" name="Nome" placeholder="Seu Nome" required style="padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; width: 100%; box-sizing: border-box;" />
+      
+      <input type="email" name="Email" placeholder="Seu E-mail (para receber a resposta)" required style="padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; width: 100%; box-sizing: border-box;" />
+    </div>
+    
+    <textarea name="Comentario" rows="4" placeholder="Escreva sua dúvida, dica ou comentário aqui..." required style="padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; font-family: inherit; width: 100%; box-sizing: border-box;"></textarea>
+
+    <button type="submit" class="btn-enviar-comentario">
+      Enviar Comentário
+    </button>
+  </form>
+
+</section>
+
+<style>
+  .btn-enviar-comentario {
+    background: #10b981; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    font-size: 1.1rem; 
+    transition: background 0.3s ease;
+  }
+  .btn-enviar-comentario:hover { 
+    background: #059669; 
+  }
+
+  /* Ajuste para celular: empilha os campos de Nome e Email */
+  @media (max-width: 600px) {
+    form > div {
+      grid-template-columns: 1fr !important;
     }
-  </script>
-</div>
+  }
+</style>
