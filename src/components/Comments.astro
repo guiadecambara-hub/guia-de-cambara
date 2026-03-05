@@ -1,31 +1,30 @@
 ---
 // src/components/Comments.astro
 ---
-<div class="comments-container" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0; min-height: 200px;">
+<div class="comments-area" style="margin-top: 50px; padding: 30px; border-top: 2px solid #e2e8f0;">
   <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 5px solid #10b981;">
     <h3 style="margin: 0; color: #0f172a;">💬 Deixe sua dúvida ou sugestão!</h3>
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
-  <div 
-    id="cusdis_thread"
+  <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
     data-page-id={Astro.url.pathname}
     data-page-url={Astro.url.href}
     data-page-title={Astro.url.pathname}
-    data-theme="light"
-  ></div>
+    data-theme="light">
+  </div>
 
   <script is:inline>
-    // 1. FORÇA A TRADUÇÃO PARA PORTUGUÊS
+    // Tradução manual garantida
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
       "loading": "Carregando...",
       "email": "E-mail (opcional)",
       "nickname": "Seu Nome",
-      "reply_placeholder": "Escreva aqui sua dúvida...",
+      "reply_placeholder": "Escreva sua mensagem aqui...",
       "reply_btn": "Responder",
       "sending": "Enviando...",
       "mod_badge": "Especialista",
@@ -33,27 +32,7 @@
       "nickname_is_required": "Diga-nos o seu nome",
       "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
     };
-
-    // 2. FUNÇÃO QUE "ACORDA" O SISTEMA SEM PRECISAR DE F5
-    function forceCusdis() {
-      const container = document.getElementById('cusdis_thread');
-      if (container && window.CUSDIS) {
-        // Limpa o conteúdo interno para não duplicar
-        container.innerHTML = '';
-        // Reinicia o sistema
-        window.CUSDIS.initial();
-      }
-    }
-
-    // Tenta carregar em 3 momentos diferentes para garantir o sucesso
-    window.addEventListener('load', forceCusdis);
-    document.addEventListener('astro:page-load', forceCusdis);
-    document.addEventListener('astro:after-swap', forceCusdis);
-
-    // Se houver atraso na internet, tenta de novo após 1 segundo
-    setTimeout(forceCusdis, 1000);
   </script>
-
-  <!-- O motor que faz tudo funcionar -->
+  
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
