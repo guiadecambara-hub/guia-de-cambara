@@ -7,6 +7,7 @@
     <p style="margin: 5px 0 0 0; color: #475569;">Eu respondo pessoalmente para te ajudar na sua viagem.</p>
   </div>
 
+  <!-- O sistema de comentários -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="b8307b5d-3893-46a8-9f13-cff3ecedc9df"
@@ -16,33 +17,23 @@
     data-theme="light">
   </div>
 
+  <!-- Script que traduz e liga o sistema -->
   <script is:inline>
-    // GARANTE A TRADUÇÃO PARA PORTUGUÊS
     window.CUSDIS_LOCALE = {
       "powered_by": "Comentários por",
       "post": "Enviar Comentário",
       "loading": "Carregando...",
       "email": "E-mail (opcional)",
       "nickname": "Seu Nome",
-      "reply_placeholder": "Escreva aqui sua dúvida ou mensagem...",
+      "reply_placeholder": "Escreva aqui sua mensagem...",
       "reply_btn": "Responder",
       "sending": "Enviando...",
       "mod_badge": "Especialista",
-      "content_is_required": "O conteúdo é obrigatório",
-      "nickname_is_required": "O nome é obrigatório",
-      "comment_has_been_sent": "Mensagem enviada! Ela aparecerá aqui assim que eu aprovar."
+      "content_is_required": "Escreva algo antes de enviar",
+      "nickname_is_required": "Diga-nos o seu nome",
+      "comment_has_been_sent": "Mensagem enviada! Aparecerá aqui após aprovação."
     };
-
-    // FUNÇÃO QUE CARREGA O COMENTÁRIO
-    function initCusdis() {
-      if (window.CUSDIS) {
-        window.CUSDIS.initial();
-      }
-    }
-
-    // Executa ao abrir a página
-    window.addEventListener('load', initCusdis);
   </script>
-
+  
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>

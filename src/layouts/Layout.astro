@@ -19,6 +19,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<link rel="apple-touch-icon" href="/favicon.webp" />
+		<!-- REMOVEMOS O VIEWTRANSITIONS DAQUI PARA PARAR DE BUGAR -->
 	</head>
 	<body>
 		<Header />
@@ -31,6 +32,6 @@ const { title, description } = Astro.props;
 
 <style is:global>
 	:root { --primary-green: #10b981; --dark-blue: #0f172a; }
-	body { margin: 0; font-family: system-ui, sans-serif; background-color: #f8fafc; color: #334155; }
+	body { margin: 0; font-family: system-ui, sans-serif; background-color: #f8fafc; }
 	.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 </style>
